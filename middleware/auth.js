@@ -6,9 +6,7 @@ const User = require("../models/userModel");
 exports.isAuthenticated = async (req, res, next) => {
     const { token } = req.cookies;
     // Make sure token exists
-    if (!token) {
-        return next(new ErrorResponse('Not authorized to access this route', 401));
-    }
+
 
     try {
         // Verify token

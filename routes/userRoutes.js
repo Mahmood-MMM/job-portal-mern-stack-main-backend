@@ -7,11 +7,11 @@ const { isAuthenticated, isAdmin } = require('../middleware/auth');
 //user routes
 
 // /api/allusers
-router.get('/allusers', isAuthenticated, isAdmin, allUsers);
+router.get('/allusers', isAdmin, allUsers);
 // /api/user/id
-router.get('/user/:id', isAuthenticated, singleUser);
+router.get('/user/:id', singleUser);
 // /api/user/edit/id
-router.put('/user/edit/:id', isAuthenticated, editUser);
+router.put('/user/edit/:id', editUser);
 // /api/admin/user/delete/id
 router.delete('/admin/user/delete/:id', isAuthenticated, isAdmin, deleteUser);
 // /api/user/jobhistory
